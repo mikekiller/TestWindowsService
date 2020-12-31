@@ -27,7 +27,7 @@ namespace TestWindowsService
             timer1.Enabled = true;
             Library.WriteErrorLog("Test windows service started");
 
-            String applicationName = "\"C:\\Program Files (x86)\\Mike Vargas\\Test Service\\SystemTrayNotification\\SystemTrayNotification.exe\"";         
+            String applicationName = "\"C:\\Program Files (x86)\\MikeVargas\\TestService\\SystemTrayNotification\\SystemTrayNotification.exe\"";         
             ApplicationLoader.PROCESS_INFORMATION procInfo;
             ApplicationLoader.StartProcessAndBypassUAC(applicationName, out procInfo);
 

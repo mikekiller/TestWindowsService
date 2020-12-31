@@ -12,10 +12,10 @@
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_TestWindowsService.exe.config" Value="TestWindowsService.exe.config"/>
     <ROW Property="ALLUSERS" Value="1"/>
     <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
-    <ROW Property="Manufacturer" Value="Mike Vargas"/>
+    <ROW Property="Manufacturer" Value="MikeVargas"/>
     <ROW Property="ProductCode" Value="1033:{669345B0-FC23-4948-B510-CA49B3DF54DB} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
-    <ROW Property="ProductName" Value="Test Service"/>
+    <ROW Property="ProductName" Value="TestService"/>
     <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{F178D471-4DCD-40B9-AE13-1745BECC4545}"/>
@@ -38,6 +38,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{274FBE9C-AD51-4571-97D6-96D9DBDBB56C}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="ProductInformation" ComponentId="{0ECA56C5-6E69-446D-94A5-BC6E5638D793}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="Readme.md" ComponentId="{1B28A5F3-2AA1-4D49-83BE-B92F5520723B}" Directory_="TestWindowsService_Dir" Attributes="0" KeyPath="Readme.md" Type="0"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{09D726B5-5598-43C1-A823-2B5B21914896}" Directory_="SHORTCUTDIR" Attributes="0"/>
     <ROW Component="SystemTrayNotification_PrimaryOutput" ComponentId="{80821C6A-EC4D-46E1-8150-3179E26F50A5}" Directory_="SystemTrayNotification_Dir" Attributes="0" KeyPath="SystemTrayNotification.exe"/>
     <ROW Component="TestWindowsService_PrimaryOutput" ComponentId="{10E83891-F7EB-4A21-AB9C-92A0F2A5142F}" Directory_="TestWindowsService_Dir" Attributes="0" KeyPath="TestWindowsService.exe"/>
@@ -51,6 +52,7 @@
     <ROW File="SystemTrayNotification.exe.config" Component_="SystemTrayNotification_PrimaryOutput" FileName="SYSTEM~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_SystemTrayNotification.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_SystemTrayNotification.exe.config&gt;" SelfReg="false"/>
     <ROW File="TestWindowsService.exe" Component_="TestWindowsService_PrimaryOutput" FileName="TESTWI~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_TestWindowsService.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_TestWindowsService.exe&gt;" SelfReg="false" DigSign="true"/>
     <ROW File="TestWindowsService.exe.config" Component_="TestWindowsService_PrimaryOutput" FileName="TESTWI~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_TestWindowsService.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_TestWindowsService.exe.config&gt;" SelfReg="false"/>
+    <ROW File="Readme.md" Component_="Readme.md" FileName="Readme.md" Attributes="0" SourcePath="..\TestWindowsService\Readme.md" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_SystemTrayNotification.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_SystemTrayNotification.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_SystemTrayNotification.exe]" Type="2" Content="0"/>
@@ -123,6 +125,7 @@
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_SetArpReadmeFile" Type="51" Source="ARPREADME" Target="[#Readme.md]"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -133,6 +136,7 @@
     <ROW Feature_="MainFeature" Component_="SystemTrayNotification_PrimaryOutput"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
     <ROW Feature_="MainFeature" Component_="TestWindowsService_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="Readme.md"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
@@ -141,6 +145,7 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_SetArpReadmeFile" Condition="NOT Installed" Sequence="1001"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
