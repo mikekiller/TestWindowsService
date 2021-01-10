@@ -31,12 +31,10 @@ namespace TestWindowsService
             ApplicationLoader.PROCESS_INFORMATION procInfo;
             ApplicationLoader.StartProcessAndBypassUAC(applicationName, out procInfo);
 
-            
 
         }
         private void timer1_Tick(object sender , ElapsedEventArgs e)
         {
-            //write code here to do some job depends on your requirements
             Library.WriteErrorLog("Timer ticked and some job has been done sucessfully");
         }
 

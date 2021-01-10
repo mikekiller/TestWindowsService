@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,20 +16,12 @@ namespace SystemTrayNotification
         public Form1()
         {
             InitializeComponent();
-            // this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.ShowInTaskbar = false;
-            //this.Load += new EventHandler(Form1_Load);
-
-            //this.Visible = false;
         }
-
-        
-
-       
 
         private void Form1_Load(object sender, EventArgs e)
         {
             notifyIcon1.ShowBalloonTip(1000, "Important notice", " Double click to display the form", ToolTipIcon.Info);
+            
         }
 
         private void notifyIcon1_DoubleClick(object sender, EventArgs e)
@@ -39,22 +32,19 @@ namespace SystemTrayNotification
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this methods are for the version final 
-            //this.Hide();
-            //notifyIcon1.ShowBalloonTip(1000, "Important Notice", "Double click to display the form", ToolTipIcon.Info);
 
-            string area= "";
-            stanza obj = new stanza();
-            obj.TextInput11 = textBox1.Text + Environment.NewLine;
+            // sortedStrophe obj = new sortedStrophe();
 
-            area =  obj.recorrerArray(obj.TextInput11);
+            // obj.TextInput11 = textBox1.Text + Environment.NewLine;
+            // textBox2.Text =  obj.recorrerArray(obj.TextInput11);
 
-            textBox2.Text = area;
+            //new Version of code
+            Controller obj = new Controller();
+            textBox2.Text = obj.readData(textBox1.Text + Environment.NewLine + Environment.NewLine);
             
-
             
         }
-     
+        
 
         public string invertircadena(string output)
         {
@@ -62,9 +52,5 @@ namespace SystemTrayNotification
             return output;
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
-        {
-           // this.Hide();
-        }
     }
 }
