@@ -40,7 +40,7 @@ namespace SystemTrayNotification
             this.Opacity = 0;
             txtInputWords.Text = "";
             txtOutputWords.Text = "";
-            ShowNotificationBallon();
+            ShowNotificationBallon(); 
 
         }
 

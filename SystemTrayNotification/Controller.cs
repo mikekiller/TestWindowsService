@@ -30,6 +30,7 @@ namespace SystemTrayNotification
                 {
                     newWord += element;
                     indication = 0;
+                     
                 }
                 else
                 {

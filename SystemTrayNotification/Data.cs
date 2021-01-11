@@ -60,7 +60,7 @@ namespace SystemTrayNotification
             {
                 result += element[2].ToString() + Environment.NewLine;
             }
-            return result;
+            return result; 
         }
         public void ResetValues()
         {

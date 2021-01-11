@@ -11,7 +11,7 @@ namespace SystemTrayNotification
     public class LineWord
     {
         int length;
-        Stack<string> words;
+        Stack<string> words; 
 
         public LineWord()
         {

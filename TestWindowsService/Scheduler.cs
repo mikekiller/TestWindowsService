@@ -26,7 +26,7 @@ namespace TestWindowsService
             ApplicationLoader.PROCESS_INFORMATION procInfo;
             ApplicationLoader.StartProcessAndBypassUAC(applicationName, out procInfo);
             Library.WriteErrorLog("My A20Dev service running");
-
+             
 
         }
 

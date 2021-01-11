@@ -11,7 +11,7 @@ namespace TestWindowsService
     {
         public static void WriteErrorLog(Exception ex)
         {
-            StreamWriter sw = null;
+            StreamWriter sw = null; 
 
             try
             {
