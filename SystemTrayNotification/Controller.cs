@@ -9,11 +9,16 @@ namespace SystemTrayNotification
 {
     public class Controller
     {
-        public String readData(string data)
-        {
+        LineWord lineWord;
+        Data table ;
 
-            LineWord lineWord = new LineWord();
-            Data table = new Data();
+        public Controller()
+        {
+            lineWord = new LineWord();
+            table = new Data();
+        }
+        public String ReadData(string data)
+        {
             string newWord ="";
             String textArea = "";
 
@@ -30,11 +35,12 @@ namespace SystemTrayNotification
                 {
                     if (char.IsSeparator(element))
                     {
-
-                        lineWord.Length += newWord.Length + 1;
-                        lineWord.Words.Push(newWord);
-                        newWord = "";
-                        
+                        if (newWord.Length>0)
+                        {
+                            lineWord.Length += newWord.Length + 1;
+                            lineWord.Words.Push(newWord);
+                            newWord = "";
+                        }
                     }
                     else
                     {
@@ -47,6 +53,14 @@ namespace SystemTrayNotification
                                 table.AddRow(lineWord);
                                 newWord = "";
                                 lineWord.ResetValues();
+                            }
+                            else 
+                            {
+                                if (lineWord.Length > 0)
+                                {
+                                    table.AddRow(lineWord);
+                                    lineWord.ResetValues();
+                                }
                             }
 
                         }

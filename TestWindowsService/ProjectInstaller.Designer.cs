@@ -40,7 +40,7 @@
             // serviceInstaller1
             // 
             this.serviceInstaller1.Description = "this service let you keep running your application at any time";
-            this.serviceInstaller1.ServiceName = "My Stanza Service";
+            this.serviceInstaller1.ServiceName = "My A20Dev Service";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             this.serviceInstaller1.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller1_AfterInstall);
             // 

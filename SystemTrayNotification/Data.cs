@@ -15,7 +15,7 @@ namespace SystemTrayNotification
 
         public Data()
         {
-            Table = new DataTable("MyTable");
+            table = new DataTable("MyTable");
             CreateTable();
         }
         public void CreateTable()
@@ -31,8 +31,18 @@ namespace SystemTrayNotification
             DataRow newRow = Table.NewRow();
             newRow["Id"] = Guid.NewGuid().ToString();
             newRow["Length"] = lineWord.Length;
-            newRow["Words"] = GeneralMethods.GetWords(lineWord.Words);
+            newRow["Words"] = GetWords(lineWord.Words);
             Table.Rows.Add(newRow);
+        }
+        public string GetWords(Stack<string> list)
+        {
+            string result = "";
+            foreach (var element in list)
+            {
+                result += element + " ";
+            }
+            return result;
+
         }
         public string GetStringToTextArea()
         {

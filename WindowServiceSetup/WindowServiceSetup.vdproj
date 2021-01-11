@@ -28,6 +28,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8079DD5F723C4A16BDBAD4735DE7F0AB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_49143F5689D276817319B13BEDD8C012"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -35,12 +41,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7287E568327F45A6A4B8D0A32D6B6C2B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8079DD5F723C4A16BDBAD4735DE7F0AB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -61,6 +61,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -77,6 +93,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -248,9 +272,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:WindowServiceSetup"
+        "ProductName" = "8:A2O Dev"
         "ProductCode" = "8:{D4336598-CA1B-4684-BB1F-A3F75A2AF22B}"
-        "PackageCode" = "8:{3D0A2365-640A-4A6A-94E8-5228E57235A9}"
+        "PackageCode" = "8:{BBBAC5F4-4704-4820-93C6-5F1B60FF95B7}"
         "UpgradeCode" = "8:{AA985E00-4CD2-4D0C-AA16-DE5BFA38BA95}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -258,7 +282,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:MikeVargas"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:WindowServiceSetup"
@@ -771,7 +795,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7287E568327F45A6A4B8D0A32D6B6C2B"
             {
-            "SourcePath" = "8:..\\SystemTrayNotification\\obj\\Release\\SystemTrayNotification.exe"
+            "SourcePath" = "8:..\\SystemTrayNotification\\obj\\Debug\\SystemTrayNotification.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_927E966C445E4606AE63D838A63862D3"
@@ -799,7 +823,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_8079DD5F723C4A16BDBAD4735DE7F0AB"
             {
-            "SourcePath" = "8:..\\TestWindowsService\\obj\\Release\\TestWindowsService.exe"
+            "SourcePath" = "8:..\\TestWindowsService\\obj\\Debug\\TestWindowsService.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_927E966C445E4606AE63D838A63862D3"
